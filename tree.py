@@ -9,7 +9,8 @@ class Tree(object):
     def __init__(self):
         self.root = None
 
-    def insert(self, node):
+    def insert(self, value):
+        node = Node(value)
         if (self.root == None):
             self.root = node
         else:
@@ -67,6 +68,13 @@ class Node(object):
         if (self.right):
             self.right.preorder(fun)
 
+    def postorder(self, fun):
+        if (self.left):
+            self.left.postorder(fun)
+        if (self.right):
+            self.right.postorder(fun)
+        fun(self.value)
+
     def inorder_nonrec(self, fun):
         stack = [self]
         visited = {}
@@ -84,10 +92,14 @@ class Node(object):
                 fun(t.value)
 
 tree = Tree()
-tree.insert(Node(5))
-tree.insert(Node(1))
-tree.insert(Node(9))
-tree.insert(Node(100))
-tree.insert(Node(150))
+tree.insert(5)
+tree.insert(1)
+tree.insert(9)
+tree.insert(100)
+tree.insert(150)
+tree.insert(1)
+tree.insert(3)
+tree.insert(6)
+tree.insert(191)
 
 print(tree.list_nonrec())
