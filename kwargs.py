@@ -55,3 +55,7 @@ print (zip(zipped)) # [((1, 4, 7),), ((2, 5, 8),), ((3, 6, 9),)]
 
 # ... even though zip usually truncates to the shortest argument:
 print (zip(zipped, [])) # []
+
+# ... turns out this is just gross syntax for unary tuples, rather than a
+# list of (x, None)!
+print (map(list, zip(zipped)))
