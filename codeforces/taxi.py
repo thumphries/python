@@ -78,8 +78,10 @@ groupings['1'] = groupings['1'] - (4 * (groupings['1'] / 4))
 if (groupings['2']):
     taxis = taxis + 1
 
+# if there are more than 2 1s we'll need an extra cab
 if (groupings['1'] > 2 and groupings['2']):
     taxis = taxis + 1
+# if there were no lone 2s the 1s need their own anyway
 elif (groupings['1'] and not groupings['2']):
     taxis = taxis + 1
 
