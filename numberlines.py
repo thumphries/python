@@ -31,3 +31,4 @@ for i in range(0, num_lines):
         count = count + 1
         sum += int(word)
     print ("%d %d" % (count, sum))
+
